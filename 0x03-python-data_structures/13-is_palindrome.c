@@ -39,7 +39,13 @@ int is_palindrome(listint_t **head)
   for (c = 0; c < (n / 2); c++)
     {
       if (a_1[c] != a_2[c])
-	return (0);
+	{
+	  free(a_1);
+	  free(a_2);
+	  return (0);
+	}
     }
+  free(a_1);
+  free(a_2);
   return (1);
 }
