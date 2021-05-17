@@ -5,4 +5,5 @@ def safe_print_integer(value):
         print("{:d}".format(value))
     except ValueError:
         flag = 0
-    return (bool(flag))
+    finally:
+        return (bool(flag))
