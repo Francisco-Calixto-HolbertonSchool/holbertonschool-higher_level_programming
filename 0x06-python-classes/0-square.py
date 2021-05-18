@@ -1,3 +1,6 @@
 #!/usr/bin/python3
 class Square:
-    __dict__ = {}
+    """
+    Empty class that does nothing for task 0
+    """
+    pass
