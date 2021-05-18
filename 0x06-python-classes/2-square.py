@@ -1,5 +1,5 @@
 #!/user/bin/python3
-"""Square class defined by size and verifies if size is valid"""
+"""Square class defined by size and ve"""
 
 
 class Square:
