@@ -1,14 +1,13 @@
 #!/user/bin/python3
-"""Square class defined by size and ve"""
+"""Square class defined by size and verifies if size is valid"""
 
 
 class Square:
     """Inside the class yeahhh"""
 
     def __init__(self, size=0):
-        typ = isinstance(size, int)
-        if typ is False:
+        if not isinstance(size, int):
             raise TypeError('size must be an integer')
-        elif size < 0:
+        if size < 0:
             raise ValueError('size must be >= 0')
         self.__size = size
