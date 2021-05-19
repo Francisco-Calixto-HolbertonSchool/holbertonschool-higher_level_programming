@@ -50,9 +50,14 @@ class Square:
         else:
             for ent in range(enter):
                 print("")
+            for sp in range(sep):
+                print(" ", end='')
             for i in range(1, (area + 1)):
                 if i % lado == 0:
                     print("#")
+                    if i != area:
+                        for s in range(sep):
+                            print(" ", end='')
                 else:
                     print("#", end="")
 
