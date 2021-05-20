@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+'''Simple function adds two numbers'''
+
+
 def add_integer(a, b=98):
     if isinstance(a, float):
         a = int(a)
