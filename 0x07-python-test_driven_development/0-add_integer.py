@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-'''Simple function adds two numbers'''
+"""This module contains a function to add integers"""
 
 
 def add_integer(a, b=98):
+    '''This function adds integers'''
     if isinstance(a, float):
         a = int(a)
     elif not isinstance(a, int):
@@ -11,5 +12,4 @@ def add_integer(a, b=98):
         b = int(b)
     elif not isinstance(b, int):
         raise TypeError("b must be an integer")
-    else:
-        return a + b
+    return a + b
