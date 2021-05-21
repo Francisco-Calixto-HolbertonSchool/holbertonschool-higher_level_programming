@@ -8,8 +8,6 @@ a whole matrix by a constant
 def matrix_divided(matrix, div):
     """This function takes a matrix and divides every element by div"""
     
-    new = matrix.copy()
-    
     """In this double loop i first check if matrix contains valid lists 
     with either float or integers to be able to safely apply len() later"""
 
@@ -24,7 +22,7 @@ def matrix_divided(matrix, div):
     
     """Now check if all rows have the same size"""
 
-    iterated_matrix = iter(m)
+    iterated_matrix = iter(matrix)
     init_len = len(next(iterated_matrix))
     if not all(len(j) == init_len for j in iterated_matrix):
         raise TypeError("Each row of the matrix must have the same size")
@@ -34,5 +32,4 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    for r in range(len(matrix)):
-        for el in range(init_len):
+    return list(map(lambda x: list(map(lambda y: round((y / div), 2), x)), matrix))
