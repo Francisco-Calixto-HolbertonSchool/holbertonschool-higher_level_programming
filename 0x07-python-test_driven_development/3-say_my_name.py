@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""contains a function that takes name and las name and 
+"""contains a function that takes name and las name and
 prints with personalized message to stdout"""
 
 
