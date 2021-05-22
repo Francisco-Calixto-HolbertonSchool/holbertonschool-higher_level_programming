@@ -11,17 +11,17 @@ def matrix_divided(matrix, div):
     """In this double loop i first check if matrix contains valid lists
     with either float or integers to be able to safely apply len() later"""
 
-    if not isinstance(matrix, list):
-        raise TypeError("matrix must be a matrix (list of lists) of \
-                        integers/floats")
+    if type(matrix) is not list or matrix == [] or matrix == [[]]:
+        raise TypeError("matrix must be a matrix (list of lists) of "
+                        "integers/floats")
     for row in matrix:
-        if not isinstance(row, list):
-            raise TypeError("matrix must be a matrix (list of lists) \
-                            of integers/floats")
+        if type(row) is not list:
+            raise TypeError("matrix must be a matrix (list of lists) "
+                            "of integers/floats")
         for i in row:
-            if not isinstance(i, float) and not isinstance(i, int):
-                raise TypeError("matrix must be a matrix (list of lists) \
-                                of integers/floats")
+            if type(i) not in [float, int]:
+                raise TypeError("matrix must be a matrix (list of lists) "
+                                "of integers/floats")
 
     """Now check if all rows have the same size"""
 
@@ -30,7 +30,7 @@ def matrix_divided(matrix, div):
     if not all(len(j) == init_len for j in iterated_matrix):
         raise TypeError("Each row of the matrix must have the same size")
 
-    if not isinstance(div, float) and not isinstance(div, int):
+    if type(div) not in [float, int]:
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
