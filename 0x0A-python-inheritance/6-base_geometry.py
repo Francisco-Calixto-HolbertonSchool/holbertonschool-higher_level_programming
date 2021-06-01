@@ -2,7 +2,7 @@
 """This module contains BaseGeometry class"""
 
 
-class BaseGeometry(list):
+class BaseGeometry():
     """Class BaseGeometry, for now does nothing"""
 
     """useles fct raises typerr"""
