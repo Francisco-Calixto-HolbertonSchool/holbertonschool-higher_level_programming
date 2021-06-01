@@ -12,3 +12,8 @@ class Square(Rectangle):
     """instantiation with size"""
     def __init__(self, size):
         super().__init__(size, size)
+        self.__size = size
+
+    """AREA BEACUSE CHECKER"""
+    def area(self):
+        return (self.__size ** 2)
