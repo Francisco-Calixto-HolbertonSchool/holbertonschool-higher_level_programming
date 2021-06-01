@@ -62,3 +62,12 @@ TypeError: kiko must be an integer
 Traceback (most recent call last):
 ...
 TypeError: kiko must be an integer
+
+
+---------------------------------
+
+
+>>> print(bg.area())
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
