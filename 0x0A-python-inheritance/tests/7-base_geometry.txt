@@ -10,3 +10,27 @@ Using the BaseGeometry class
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("square", 5)
 >>> bg.integer_validator("triangle", 3)
+>>> bg.integer_validator("kiko", 0)
+Traceback (most recent call last):
+...
+ValueError: kiko must be greater than 0
+>>> bg.integer_validator("kiko", -0)
+Traceback (most recent call last):
+...
+ValueError: kiko must be greater than 0
+>>> bg.integer_validator("triangulo", -3)
+Traceback (most recent call last):
+...
+ValueError: triangulo must be greater than 0
+>>> bg.integer_validator("kiko", "kiko")
+Traceback (most recent call last):
+...
+TypeError: kiko must be an integer
+>>> bg.integer_validator("kiko", None)
+Traceback (most recent call last):
+...
+TypeError: kiko must be an integer
+>>> bg.integer_validator("kiko", 3.9)
+Traceback (most recent call last):
+...
+TypeError: kiko must be an integer
