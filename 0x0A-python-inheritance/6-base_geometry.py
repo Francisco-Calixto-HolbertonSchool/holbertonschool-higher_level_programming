@@ -4,6 +4,7 @@
 
 class BaseGeometry(list):
     """Class BaseGeometry, for now does nothing"""
-    
+
+    """useles fct raises typerr"""
     def area(self):
         raise Exception("area() is not implemented")
