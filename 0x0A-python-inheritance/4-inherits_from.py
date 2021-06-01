@@ -3,6 +3,7 @@
 
 
 def inherits_from(obj, a_class):
+    """is checker broken yes"""
     if issubclass(obj.__class__, a_class) and type(obj) is not a_class:
         return True
     else:
