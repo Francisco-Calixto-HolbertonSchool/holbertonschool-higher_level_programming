@@ -9,9 +9,7 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 """import jssasonn utilities"""
 
 
-new_args = []
 actual = load_from_json_file("add_item.json")
 for i in range(1, len(argv)):
-    new_args.append(argv[i])
-new_lis = actual + new_args
-save_to_json_file(new_lis, "add_item.json")
+    actual.append(argv[i])
+save_to_json_file(actual, "add_item.json")
