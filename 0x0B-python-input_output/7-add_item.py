@@ -17,5 +17,3 @@ def main():
         new_args.append(argv[i])
     new_lis = actual + new_args
     save_to_json_file(new_lis, "add_item.json")
-
-main()
