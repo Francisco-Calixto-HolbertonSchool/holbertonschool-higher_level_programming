@@ -17,41 +17,57 @@ class Rectangle(Base):
         self.__y = y
 
     @property
-    def eval_width(self):
+    def width(self):
         """useles coment"""
         return self.__width
 
-    @eval_width.setter
-    def eval_width(self, width):
+    @width.setter
+    def width(self, v):
         """useless comment """
-        self.__width = width
+        if type(v) is not int:
+            raise TypeError("width must be an integer")
+        if v <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = v
 
     @property
-    def eval_height(self):
+    def height(self):
         """useles coment"""
         return self.__height
 
-    @eval_height.setter
-    def eval_height(self, height):
+    @height.setter
+    def height(self, v):
         """useless comment """
-        self.__height = height
+        if type(v) is not int:
+            raise TypeError("height must be an integer")
+        if v <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = v
 
     @property
-    def eval_x(self):
+    def x(self):
         """useles coment"""
         return self.__x
 
-    @eval_x.setter
-    def eval_x(self, x):
+    @x.setter
+    def x(self, v):
         """useless comment """
-        self.__x = x
+        if type(v) is not int:
+            raise TypeError("x must be an integer")
+        if v < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = v
 
     @property
-    def eval_y(self):
+    def y(self):
         """useles coment"""
         return self.__y
 
-    @eval_y.setter
-    def eval_y(self, y):
+    @y.setter
+    def y(self, v):
         """useless comment """
-        self.__y
+        if type(v) is not int:
+            raise TypeError("y must be an integer")
+        if v < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = v
