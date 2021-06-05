@@ -75,3 +75,14 @@ class Rectangle(Base):
     def area(self):
         """area method"""
         return (self.width * self.height)
+
+    def display(self):
+        """print rectangle with #'s"""
+        ancho = self.width
+        alto = self.height
+        area = alto * ancho
+        for i in range(1, (area + 1)):
+            if i % ancho == 0:
+                print("#")
+            else:
+                print("#", end="")
