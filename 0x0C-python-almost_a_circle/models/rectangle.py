@@ -16,12 +16,6 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    def update(self, *args):
-        """assigns an argument to each attribute"""
-        aux = [self.id, self.width, self.height, self.x, self.y]
-        for i in range(len(args)):
-            aux[i] = args[i]
-
     @property
     def width(self):
         """useles coment"""
@@ -104,3 +98,32 @@ class Rectangle(Base):
         """change the str"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
+        if args:
+            l = len(args)
+            self.id = args[0]
+            i = 1
+            if i < l:
+                self.width = args[i]
+                i += 1
+            if i < l:
+                self.height = args[i]
+                i += 1
+            if i < l:
+                self.x = args[i]
+                i += 1
+            if i < l:
+                self.y = args[i]
+        elif kwargs:
+            if 'id' in kwargs:
+                self.id = kwargs['id']
+            if 'width' in kwargs:
+                self.width = kwargs['width']
+            if 'height' in kwargs:
+                self.height = kwargs['height']
+            if 'x' in kwargs:
+                self.x = kwargs['x']
+            if 'y' in kwargs:
+                self.y = kwargs['y']
