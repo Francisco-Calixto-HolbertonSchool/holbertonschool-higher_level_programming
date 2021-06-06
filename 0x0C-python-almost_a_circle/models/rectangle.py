@@ -81,7 +81,14 @@ class Rectangle(Base):
         ancho = self.width
         alto = self.height
         area = alto * ancho
+        space = self.x
+        enter = self.y
+        for e in range(enter):
+            print('')
         for i in range(1, (area + 1)):
+            if i % ancho == 1:
+                for s in range(space):
+                    print(' ', end='')
             if i % ancho == 0:
                 print("#")
             else:
@@ -89,4 +96,5 @@ class Rectangle(Base):
 
     def __str__(self):
         """change the str"""
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height))
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
+                                                       self.width, self.height)
