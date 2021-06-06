@@ -86,3 +86,7 @@ class Rectangle(Base):
                 print("#")
             else:
                 print("#", end="")
+
+    def __str__(self):
+        """change the str"""
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height))
