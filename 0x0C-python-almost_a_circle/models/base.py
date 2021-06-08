@@ -39,5 +39,5 @@ class Base():
     def from_json_string(json_string):
         '''from json to string'''
         if json_string is None or len(json_string) == 0:
-            return '[]'
+            return []
         return (json.loads(json_string))
