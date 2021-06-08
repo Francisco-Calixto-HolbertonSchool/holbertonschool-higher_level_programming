@@ -48,3 +48,13 @@ class Base():
         if json_string is None or len(json_string) == 0:
             return []
         return (json.loads(json_string))
+
+    """class method"""
+
+    @classmethod
+    def create(cls, **dictionary):
+        """create instance from dictionary"""
+        dummy = cls(1, 1, 1, 1, 1)
+        dummy.update(id=dictionary['id'], y=dictionary['y'], x=dictionary['x'],
+                     height=dictionary['height'], width=dictionary['width'])
+        return dummy
