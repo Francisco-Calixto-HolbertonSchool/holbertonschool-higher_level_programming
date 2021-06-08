@@ -29,4 +29,3 @@ class Base():
     def save_to_file(cls, list_objs):
         """mi pan """
         if list_objs is None:
-            
