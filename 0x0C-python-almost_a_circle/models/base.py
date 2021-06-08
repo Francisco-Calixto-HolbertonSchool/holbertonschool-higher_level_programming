@@ -54,7 +54,9 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         """create instance from dictionary"""
-        dummy = cls(1, 1, 1, 1, 1)
-        dummy.update(id=dictionary['id'], y=dictionary['y'], x=dictionary['x'],
-                     height=dictionary['height'], width=dictionary['width'])
+        if cls.__name__ is 'square':
+            dummy = cls(1)
+        else:
+            dummy = cls(1, 1)
+        dummy.update(**dictionary)
         return dummy
