@@ -32,6 +32,12 @@ class Base():
     @classmethod
     def save_to_file(cls, list_objs):
         """mi pan """
+        new = []
+        filename = str(cls.__name__) + '.json'
+        for i in list_objs:
+            new.append(cls.to_dictionary(i))
+        with open(filename, 'w') as f:
+            f.write(cls.to_json_string(new))
 
     """static method"""
 
