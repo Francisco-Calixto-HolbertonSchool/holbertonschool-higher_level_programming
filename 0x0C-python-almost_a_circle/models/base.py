@@ -18,6 +18,8 @@ class Base():
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    '''static method '''
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """dictonary to json string"""
@@ -25,7 +27,9 @@ class Base():
             return '[]'
         return (json.dumps(list_dictionaries))
 
+    '''class method'''
+
     @classmethod
     def save_to_file(cls, list_objs):
         """mi pan """
-        if list_objs is None:
+        pass
