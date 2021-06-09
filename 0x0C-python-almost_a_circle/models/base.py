@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """this module contains the base class of the project"""
 
-
+import os.path
 import json
 """import json"""
 
@@ -60,3 +60,19 @@ class Base():
             dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
+
+    """file to insatnces"""
+
+    @classmethod
+    def load_from_file(cls):
+        """file to instances"""
+        lis = []
+        filename = str(cls.__name__) + '.json'
+        if not os.path.isfile(filename):
+            return new
+        with open(filename, "r") as f:
+            r = f.read()
+            new = cls.from_json_string(r)
+        for dic in new:
+            lis.append(cls.create(**dic))
+        return lis
