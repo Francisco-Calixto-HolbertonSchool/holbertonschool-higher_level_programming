@@ -54,7 +54,7 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         """create instance from dictionary"""
-        if cls.__name__ is 'square':
+        if cls.__name__ is 'Square':
             dummy = cls(1)
         else:
             dummy = cls(1, 1)
