@@ -69,7 +69,7 @@ class Base():
         lis = []
         filename = str(cls.__name__) + '.json'
         if not os.path.isfile(filename):
-            return new
+            return lis
         with open(filename, "r") as f:
             r = f.read()
             new = cls.from_json_string(r)
