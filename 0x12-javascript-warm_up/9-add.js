@@ -2,7 +2,7 @@
 
 require('process');
 
-function add(a, b) {
+function add (a, b) {
   const c = parseInt(a);
   const d = parseInt(b);
   if (isNaN(c) || isNaN(d)) {
