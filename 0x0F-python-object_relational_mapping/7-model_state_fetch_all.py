@@ -6,7 +6,7 @@ from sys import argv
 from model_state import Base, State
 
 if __name__ == '__main__':
-    engine = sqlalchemy.create_engine(f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost/{argv[3]}")
+    engine = sqlalchemy.create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(argv[1], argv[2], argv[3]))
     connection = engine.connect()
     md = sqlalchemy.MetaData()
     states = sqlalchemy.Table(argv[3], md, autoload=True, autoload_width=engine)
