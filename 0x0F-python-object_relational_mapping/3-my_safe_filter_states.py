@@ -7,7 +7,7 @@ from sys import argv
 if __name__ == '__main__':
     db = MySQLdb.connect('localhost', argv[1], argv[2], argv[3], 3306)
     cursor = db.cursor()
-    sql = f'SELECT * FROM states ORDER BY id WHERE Name = {argv[2]}'
+    sql = f'SELECT * FROM states ORDER BY id WHERE Name = {argv[2]};'
     cursor.execute(sql)
     res = cursor.fetchall()
     for row in res:
