@@ -9,5 +9,5 @@ Base = declarative_base()
 class State(Base):
     '''Inherit from base'''
     __table_name__ = 'states'
-    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, auto_generated=True, nullable=False) 
+    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, nullable=False) 
     name = sqlalchemy.Column(sqlalchemy.String(128), nullable=False)
