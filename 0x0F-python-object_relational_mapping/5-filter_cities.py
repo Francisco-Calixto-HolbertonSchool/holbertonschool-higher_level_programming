@@ -12,7 +12,7 @@ if __name__ == "__main__":
     res = cursor.fetchall()
     for i in range(len(res)):
         if i != (len(res) - 1):
-            print(f"{res[i]}, ", end="")
+            print("{}, ".format(res[i]), end="")
         else:
             print(res[i])
     db.close()
