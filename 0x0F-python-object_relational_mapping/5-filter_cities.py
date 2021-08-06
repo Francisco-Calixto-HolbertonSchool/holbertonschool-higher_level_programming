@@ -11,5 +11,5 @@ if __name__ == "__main__":
     cursor.execute(sql, (argv[4],))
     res = cursor.fetchall()
     for city in res:
-        print(city[0])
+        print(type(city[0]))
     db.close()
