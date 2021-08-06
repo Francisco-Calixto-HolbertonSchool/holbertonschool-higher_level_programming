@@ -9,5 +9,6 @@ cursor = db.cursor()
 sql = "SELECT * FROM states;"
 cursor.execute(sql)
 results = cursor.fetchall()
-print(results)
+for row in results:
+    print(row)
 db.close()
