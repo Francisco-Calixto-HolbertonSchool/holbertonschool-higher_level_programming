@@ -10,6 +10,9 @@ if __name__ == "__main__":
     sql = "SELECT cities.name FROM cities INNER JOIN states ON cities.state_id = states.id WHERE states.name = %s"
     cursor.execute(sql, (argv[4],))
     res = cursor.fetchall()
-    for city in res:
-        print(type(city))
+    for i in range(len(res)):
+        if i != (len(res) - 1):
+            print(f"{res[i]}, ", end="")
+        else:
+            print(res[i])
     db.close()
