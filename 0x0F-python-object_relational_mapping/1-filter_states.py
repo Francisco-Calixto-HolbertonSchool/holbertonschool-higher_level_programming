@@ -11,6 +11,6 @@ if __name__ == '__main__':
     cursor.execute(sql)
     res = cursor.fetchall()
     for row in res:
-        if row[0] == 'N':
+        if row[1][0] == 'N':
             print(row)
     db.close()
