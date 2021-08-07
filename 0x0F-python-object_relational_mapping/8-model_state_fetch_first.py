@@ -11,10 +11,12 @@ if __name__ == "__main__":
         )
     Base.metadata.create_all(engine)
     session = sqlalchemy.orm.Session(engine)
-
-    print("{}: {}".format(
-        session.query(State).order_by(State.id).first().id,
-        session.query(State).order_by(State.id).first().name
+    try:
+        print("{}: {}".format(
+            session.query(State).order_by(State.id).first().id,
+            session.query(State).order_by(State.id).first().name
+            )
         )
-    )
+    except:
+        print('Nothing')
     session.close()
