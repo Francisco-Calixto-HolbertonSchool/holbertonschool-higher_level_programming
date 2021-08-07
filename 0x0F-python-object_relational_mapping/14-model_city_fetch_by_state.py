@@ -12,6 +12,8 @@ if __name__ == "__main__":
         )
     Base.metadata.create_all(engine)
     session = sqlalchemy.orm.Session(engine)
-    for st, ci in session.query(State, City).filter(State.id == City.state_id).all():
+    for st, ci in session.query(State, City).filter(
+        State.id == City.state_id
+        ).all():
         print('{}: ({}) {}'.format(st.name, ci.id, ci.name))
     session.close()
