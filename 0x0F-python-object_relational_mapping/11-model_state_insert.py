@@ -14,4 +14,5 @@ if __name__ == "__main__":
     martin = State(name='Louisiana')
     session.add(martin)
     print(session.query(State).filter_by(name='Louisiana').all()[0].id)
+    session.commit()
     session.close()
