@@ -9,5 +9,5 @@ if __name__ == "__main__":
     engine = sqlalchemy.create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(argv[1], argv[2], argv[3]))
     Base.metadata.create_all(engine)
     session = sqlalchemy.orm.Session(engine)
-    print(session.query(State).filter_by(name=argv[4]).all().id)
+    print(session.query(State).filter_by(name=argv[4]).all())
     session.close()
