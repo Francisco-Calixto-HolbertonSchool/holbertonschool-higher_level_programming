@@ -11,5 +11,5 @@ class State(Base):
     '''Inherit from base'''
     __tablename__ = 'states'
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True,
-    nullable=False)
+                                               nullable=False)
     name = sqlalchemy.Column(sqlalchemy.String(128), nullable=False)
