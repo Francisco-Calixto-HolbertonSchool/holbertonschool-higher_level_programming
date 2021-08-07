@@ -6,8 +6,10 @@ from sys import argv
 from model_state import Base, State
 
 if __name__ == "__main__":
-    engine = sqlalchemy.create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(argv[1], argv[2], argv[3]))
+    engine = sqlalchemy.create_engine(
+        "mysql+mysqldb://{}:{}@localhost/{}".format(argv[1], argv[2], argv[3])
+        )
     Base.metadata.create_all(engine)
     session = sqlalchemy.orm.Session(engine)
-    print(session.query(State).filter_by(name=argv[4]).all())
+    print(session.query(State).filter_by(name=argv[4]).all()[0].id)
     session.close()
