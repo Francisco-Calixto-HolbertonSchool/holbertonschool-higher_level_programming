@@ -8,6 +8,7 @@ from model_state import Base, State
 if __name__ == '__main__':
     engine = sqlalchemy.create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(argv[1], argv[2], argv[3]))
     connection = engine.connect()
-    md = sqlalchemy.MetaData(connection).reflect()
-    states = md.tables['states']
-    print(states)
+    md = sqlalchemy.MetaData(connection)
+    print(md.tables)
+    #states = md.tables['states']
+    #print(states)
