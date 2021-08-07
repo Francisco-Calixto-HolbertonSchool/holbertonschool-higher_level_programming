@@ -11,7 +11,7 @@ if __name__ == "__main__":
         )
     Base.metadata.create_all(engine)
     session = sqlalchemy.orm.Session(engine)
-    for row in session.query(State).filter_by(State.name).all():
+    for row in session.query(State).all():
         print(row)
     session.commit()
     session.close()
