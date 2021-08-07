@@ -11,5 +11,8 @@ if __name__ == "__main__":
         )
     Base.metadata.create_all(engine)
     session = sqlalchemy.orm.Session(engine)
-    print(session.query(State).filter_by(name=argv[4]).all()[0].id)
+    try:
+        print(session.query(State).filter_by(name=argv[4]).all()[0].id)
+    except:
+        print('Not found')
     session.close()
