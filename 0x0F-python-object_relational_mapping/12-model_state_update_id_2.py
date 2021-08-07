@@ -11,6 +11,6 @@ if __name__ == "__main__":
         )
     Base.metadata.create_all(engine)
     session = sqlalchemy.orm.Session(engine)
-    session.query(State).filter_by('id'==2).update({'name': 'New Mexico'})
+    session.query(State).filter('id'==2).update({'name': 'New Mexico'})
     session.commit()
     session.close()
