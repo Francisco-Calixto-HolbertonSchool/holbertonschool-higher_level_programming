@@ -13,8 +13,8 @@ if __name__ == "__main__":
     session = sqlalchemy.orm.Session(engine)
 
     print("{}: {}".format(
-        session.query(State).order_by(State.id).one().id,
-        session.query(State).order_by(State.id).one().name
+        session.query(State).order_by(State.id).first(),
+        session.query(State).order_by(State.id).first()
         )
     )
     session.close()
