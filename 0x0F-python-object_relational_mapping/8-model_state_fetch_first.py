@@ -11,9 +11,10 @@ if __name__ == "__main__":
         )
     Base.metadata.create_all(engine)
     session = sqlalchemy.orm.Session(engine)
+
     print("{}: {}".format(
-        session.query(State).order_by(State.id).all()[0].id,
-        session.query(State).order_by(State.id).all()[0].name
+        session.query(State).order_by(State.id).one().id,
+        session.query(State).order_by(State.id).one().name
         )
     )
     session.close()
