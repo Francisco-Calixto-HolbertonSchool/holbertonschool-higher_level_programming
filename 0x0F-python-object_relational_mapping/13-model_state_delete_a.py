@@ -13,6 +13,6 @@ if __name__ == "__main__":
     session = sqlalchemy.orm.Session(engine)
     for row in session.query(State).order_by(State.id).all():
         if 'a' in row.name:
-            print(row)
+            session.delete(row)
     session.commit()
     session.close()
