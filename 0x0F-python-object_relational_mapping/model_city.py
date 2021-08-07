@@ -15,4 +15,4 @@ class City(Base):
         sqlalchemy.Integer, primary_key=True, nullable=False
         )
     name = sqlalchemy.Column(sqlalchemy.String(128), nullable=False)
-    state_id = Column(sqlalchemy.Integer, nullable=False, ForeignKey('states.id'))
+    state_id = Column(sqlalchemy.Integer, ForeignKey('states.id'), nullable=False)
