@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''fetches https://intranet.hbtn.io/status'''
+'''fetches page'''
 
 import urllib.request
 
@@ -10,4 +10,4 @@ if __name__ == "__main__":
     print(f"Body response:\n\
     \t- type: {type(body)}\n\
     \t- content: {body}\n\
-    \t- utf8 content: {body.decode('utf8')}")
+    \t- utf8 content: {body.decode('utf-8')}")
