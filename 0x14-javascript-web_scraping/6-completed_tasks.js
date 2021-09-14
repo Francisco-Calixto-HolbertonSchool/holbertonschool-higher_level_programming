@@ -12,8 +12,7 @@ request(url, function (error, response, body) {
     }
     const r = JSON.parse(body);
     for (task in r) {
-        console.log(task['userId']);
-        console.log(task.completed);
+        console.log(typeof(r));
         break
         if (!(task.userId in output) && task.completed) {
             output[task.userId.toString(10)] = 1;
