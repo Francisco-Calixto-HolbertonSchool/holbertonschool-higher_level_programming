@@ -11,7 +11,7 @@ request (url, function (error, response, body) {
     console.log(error);
     return;
   }
-  const content = JSON.parse(body);
+  const content = HTML.parse(body);
   fs.writeFile(file, content, {
     encoding: 'utf8',
     flag: 'w',
