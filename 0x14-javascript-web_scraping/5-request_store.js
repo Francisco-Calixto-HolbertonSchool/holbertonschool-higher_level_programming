@@ -11,7 +11,7 @@ request (url, function (error, response, body) {
     console.log(error);
     return;
   }
-  fs.writeFile(process.argv[2], process.argv[3], {
+  fs.writeFile(file, JSON.parse(body), {
     encoding: 'utf8',
     flag: 'w',
     mode: 0o666
