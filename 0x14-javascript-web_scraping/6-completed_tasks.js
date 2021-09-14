@@ -13,11 +13,10 @@ request(url, function (error, response, body) {
     const r = JSON.parse(body);
     for (task in r) {
         if (!(task.userId in output) && task.completed) {
-            output[task.userId] = 1;
+            output[task.userId.toString(10)] = 1;
         }
         else if (task.completed) {
-            output[task.userId] += 1;
-            continue;
+            output[task.userId.toString(10)] += 1;
         }
     }
     console.log(output);
