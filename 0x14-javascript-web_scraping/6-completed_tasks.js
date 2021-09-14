@@ -12,14 +12,11 @@ request(url, function (error, response, body) {
     }
     const r = JSON.parse(body);
     for (let i = 0; i < r.length; i++) {
-        console.log(r[i]);
-        console.log(typeof(r[i]));
-        break;
-        if (!(task.userId in output) && task.completed) {
-            output[task.userId.toString(10)] = 1;
+        if (!(r[i].userId in output) && r[i].completed) {
+            output[r[i].userId.toString(10)] = 1;
         }
-        else if (task.completed) {
-            output[task.userId.toString(10)] += 1;
+        else if (r[i].completed) {
+            output[r[i].userId.toString(10)] += 1;
         }
     }
     console.log(output);
