@@ -13,6 +13,7 @@ request(url, function (error, response, body) {
     const r = JSON.parse(body);
     for (task in r) {
         console.log(typeof(r));
+        console.log(typeof(task));
         break
         if (!(task.userId in output) && task.completed) {
             output[task.userId.toString(10)] = 1;
