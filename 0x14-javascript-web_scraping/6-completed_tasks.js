@@ -12,7 +12,7 @@ request(url, function (error, response, body) {
     }
     const r = JSON.parse(body);
     for (task in r) {
-        console.log(task.userId);
+        console.log(task['userId']);
         console.log(task.completed);
         break
         if (!(task.userId in output) && task.completed) {
