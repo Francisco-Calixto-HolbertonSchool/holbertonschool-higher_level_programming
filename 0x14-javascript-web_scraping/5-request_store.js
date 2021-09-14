@@ -6,7 +6,7 @@ const url = process.argv[2];
 const file = process.argv[3];
 const fs = require('fs');
 
-request (url, function (error, response, body) {
+request(url, function (error, response, body) {
   if (error) {
     console.log(error);
     return;
@@ -18,7 +18,6 @@ request (url, function (error, response, body) {
   }, (err) => {
     if (err) {
       console.error(err);
-      return;
     }
   });
 });
