@@ -11,10 +11,9 @@ request(url, function (error, response, body) {
       return;
     }
     const r = JSON.parse(body);
-    console.log(typeof(r));
-    console.log(typeof(r[0]));
-    console.log(r[0]);
-    for (task in JSON.parse(body)) {
+    for (task in r) {
+        console.log(task);
+        console.log(typeof(task));
         break;
         if (!(task.userId in output) && task.completed) {
             output[task.userId.toString(10)] = 1;
