@@ -21,5 +21,5 @@ request(url, function (error, response, body) {
             continue;
         }
     }
+    console.log(output);
 });
-console.log(output);
