@@ -13,7 +13,7 @@ request(url, function (error, response, body) {
   const results = JSON.parse(body).results;
   for (let i = 0; i < results.length; i++) {
     for (let j = 0; j < results[i].characters.length; j++) {
-      if (results[i].characters[j] === 'https://swapi-api.hbtn.io/api/people/59/') {
+      if (results[i].characters[j] === 'https://swapi-api.hbtn.io/api/people/18/') {
         count++;
       }
     }
