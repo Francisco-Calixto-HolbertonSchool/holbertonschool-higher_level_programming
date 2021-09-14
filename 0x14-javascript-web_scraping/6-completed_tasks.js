@@ -10,7 +10,7 @@ request(url, function (error, response, body) {
       console.log(error);
       return;
     }
-    for (task in body) {
+    for (task in JSON.parse(body)) {
         const t = JSON.parse(task);
         console.log(typeof(t));
         console.log(t);
