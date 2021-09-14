@@ -11,7 +11,8 @@ request (url, function (error, response, body) {
     console.log(error);
     return;
   }
-  const content = parse(body);
+  console.log(body);
+  /*
   fs.writeFile(file, content, {
     encoding: 'utf8',
     flag: 'w',
@@ -21,5 +22,5 @@ request (url, function (error, response, body) {
       console.error(err);
       return;
     }
-  });
+  });*/
 });
