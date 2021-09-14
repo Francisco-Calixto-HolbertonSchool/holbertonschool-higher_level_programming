@@ -10,6 +10,7 @@ request(url, function (error, response, body) {
       console.log(error);
       return;
     }
+    body = JSON.parse(body);
     console.log(typeof(body));
     console.log(typeof(body[0]));
     console.log(body[0]);
