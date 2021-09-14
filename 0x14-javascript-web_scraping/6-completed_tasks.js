@@ -11,7 +11,7 @@ request(url, function (error, response, body) {
       return;
     }
     const r = JSON.parse(body);
-    for (const task in r) {
+    for (task in r) {
         console.log(task.userId);
         console.log(task.completed);
         break
