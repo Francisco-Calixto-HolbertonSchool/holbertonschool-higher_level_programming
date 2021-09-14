@@ -19,6 +19,7 @@ request (url, function (error, response, body) {
   }, (err) => {
     if (err) {
       console.error(err);
+      return;
     }
   });
 });
