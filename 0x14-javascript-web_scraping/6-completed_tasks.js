@@ -10,8 +10,8 @@ request(url, function (error, response, body) {
       console.log(error);
       return;
     }
-    const response = JSON.parse(body);
-    for (task in response) {
+    const r = JSON.parse(body);
+    for (task in r) {
         if (!(task.userId in output) && task.completed) {
             output[task.userId] = 1;
             continue;
