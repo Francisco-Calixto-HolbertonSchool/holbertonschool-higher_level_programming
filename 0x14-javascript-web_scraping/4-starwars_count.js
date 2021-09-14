@@ -3,7 +3,7 @@
 require('process');
 const request = require('request');
 const url = process.argv[2];
-const count = 0;
+let count = 0;
 
 request(url, function (error, response, body) {
   if (error) {
