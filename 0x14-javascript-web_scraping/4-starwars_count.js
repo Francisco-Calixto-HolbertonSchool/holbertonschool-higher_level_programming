@@ -12,10 +12,8 @@ request(url, function (error, response, body) {
   }
   const results = JSON.parse(body).results
   for (let i = 0; i < results.length ; i++) {
-    console.log(results[i]);
-    for (let j = 0; j < results[i].length ; j++) {
-        console.log(results[i][j]);
-        if (results[i][j] == 'https://swapi-api.hbtn.io/api/people/18/') {
+    for (let j = 0; j < results[i].characters.length ; j++) {
+        if (results[i].characters[j] == 'https://swapi-api.hbtn.io/api/people/18/') {
             count++;
         }
     }
