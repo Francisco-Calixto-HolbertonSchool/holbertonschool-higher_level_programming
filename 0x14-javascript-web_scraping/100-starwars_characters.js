@@ -23,6 +23,7 @@ for (let j = 0; j < ids_arr.length; j++) {
       console.log(error);
       return;
     }
+    console.log(ids_arr);
     console.log(JSON.parse(body).name);
   });
 }
