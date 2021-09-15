@@ -3,8 +3,8 @@
 require('process');
 const request = require('request');
 const id = process.argv[2];
-const ids_arr = [];
-let url = 'https://swapi-api.hbtn.io/api/films/' + id
+const ids = [];
+let url = 'https://swapi-api.hbtn.io/api/films/' + id;
 
 request(url, function (error, response, body) {
   if (error) {
@@ -12,11 +12,10 @@ request(url, function (error, response, body) {
     return;
   }
   for (let i = 0; i < JSON.parse(body).characters.length; i++) {
-    ids_arr.push(JSON.parse(body).characters[i].replace('https://swapi-api.hbtn.io/api/people/', ''));
+    ids.push(JSON.parse(body).characters[i].replace('https://swapi-api.hbtn.io/api/people/', ''));
   }
-  for (let j = 0; j < ids_arr.length; j++) {
-    url = 'https://swapi-api.hbtn.io/api/people/' + ids_arr[j];
-    console.log(url);
+  for (let j = 0; j < ids.length; j++) {
+    url = 'https://swapi-api.hbtn.io/api/people/' + ids[j];
     request(url, function (error, response, body) {
       if (error) {
         console.log(error);
@@ -26,4 +25,3 @@ request(url, function (error, response, body) {
     });
   }
 });
-
