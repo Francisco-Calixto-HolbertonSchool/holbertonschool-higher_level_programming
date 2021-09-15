@@ -4,7 +4,7 @@ require('process');
 const request = require('request');
 const id = process.argv[2];
 const ids_arr = [];
-const url = 'https://swapi-api.hbtn.io/api/films/' + id
+let url = 'https://swapi-api.hbtn.io/api/films/' + id
 
 request(url, function (error, response, body) {
   if (error) {
