@@ -14,17 +14,16 @@ request(url, function (error, response, body) {
   for (let i = 0; i < JSON.parse(body).characters.length; i++) {
     ids_arr.push(JSON.parse(body).characters[i].replace('https://swapi-api.hbtn.io/api/people/', ''));
   }
-  console.log(ids_arr);
+  for (let j = 0; j < ids_arr.length; j++) {
+    url = 'https://swapi-api.hbtn.io/api/people/' + ids_arr[j];
+    console.log(url);
+    request(url, function (error, response, body) {
+      if (error) {
+        console.log(error);
+        return;
+      }
+      console.log(JSON.parse(body).name);
+    });
+  }
 });
-console.log(ids_arr);
-for (let j = 0; j < ids_arr.length; j++) {
-  url = 'https://swapi-api.hbtn.io/api/people/' + ids_arr[j];
-  console.log(url);
-  request(url, function (error, response, body) {
-    if (error) {
-      console.log(error);
-      return;
-    }
-    console.log(JSON.parse(body).name);
-  });
-}
+
