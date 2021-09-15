@@ -15,7 +15,7 @@ request(url, function (error, response, body) {
     ids_arr.push(JSON.parse(body).characters[i].replace('https://swapi-api.hbtn.io/api/people/', ''));
   }
 });
-
+console.log(ids_arr);
 for (let j = 0; j < ids_arr.length; j++) {
   url = 'https://swapi-api.hbtn.io/api/people/' + ids_arr[j];
   console.log(url);
