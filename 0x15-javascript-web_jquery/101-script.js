@@ -1,11 +1,11 @@
-window.addEventListener('DOMContentLoaded', (arrow_funct) => {
-  $('DIV#add_item').click(function(){
-      $('UL.my_list').append('<li>Item</li>');
+window.addEventListener('DOMContentLoaded', (arrowfunct) => {
+  $('DIV#add_item').click(function () {
+    $('UL.my_list').append('<li>Item</li>');
   });
-  $('#remove_item').click(function(){
-      $('UL.my_list li:last-child').remove();
+  $('#remove_item').click(function () {
+    $('UL.my_list li:last-child').remove();
   });
-  $('#clear_list').click(function(){
-      $('UL.my_list li').remove();
+  $('#clear_list').click(function () {
+    $('UL.my_list li').remove();
   });
 });
